@@ -1,0 +1,24 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://github.com/Sheggies/sm-json-schemata/collider",
+    "type": "object",
+    "title": "Collider",
+    "description": "The objects collider",
+    "properties": {
+        "col": {
+            "type": "string",
+            "title": "Collider",
+            "description": "Collider file",
+            "examples": [
+                "$CONTENT_DATA/Path/To/File"
+            ]
+        },
+        "offset": {
+            "$ref": "/sm-json-schemata/offset"
+        }
+    },
+    "required": [
+        "col",
+        "offset"
+    ]
+}

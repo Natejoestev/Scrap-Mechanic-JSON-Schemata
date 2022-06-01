@@ -1,0 +1,30 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://github.com/Sheggies/sm-json-schemata/characterdb",
+    "title": "Character Database",
+    "description": "An array with paths to character sets",
+    "examples": [
+        {
+            "characterSetList": [
+                "$CONTENT_DATA/Characters/Database/CharacterSets/example.characterset"
+            ]
+        }
+    ],
+    "type": "object",
+    "properties": {
+        "characterSetList": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "default": ":D",
+                "examples": [
+                    "$CONTENT_DATA/Characters/Database/CharacterSets/example.characterset",
+                    "$SURVIVAL_DATA/Characters/Database/CharacterSets/example.characterset",
+                    "$CREATIVE_DATA/Characters/Database/CharacterSets/example.characterset"
+                ]
+            },
+            "uniqueItems": true
+        }
+    },
+    "maxProperties": 1
+}

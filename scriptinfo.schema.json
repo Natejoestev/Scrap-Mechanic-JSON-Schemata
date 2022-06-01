@@ -1,0 +1,45 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://github.com/Sheggies/sm-json-schemata/scriptinfo",
+    "type": "object",
+    "title": "Script information",
+    "description": "Script file, script class, and script data pertaining to the object",
+    "properties": {
+        "scriptPath": {
+            "type": "string",
+            "title": "Script file",
+            "description": "The file containing the script class",
+            "examples": [
+                "$CONTENT_DATA/Scripts/Script.lua",
+                "$CREATIVE_DATA/Scripts/Script.lua",
+                "$SURVIVAL_DATA/Scripts/Script.lua"
+            ]
+        },
+        "scriptClass": {
+            "type": "string",
+            "title": "Script class",
+            "description": "The script class of the object",
+            "default": "MyScriptClass"
+        },
+        "data": {
+            "type": "object",
+            "title": "Script data",
+            "description": "Optional script data passed to the instance this script is attached to.",
+            "examples": [
+                {
+                    "memberA": 50,
+                    "memberB": "None",
+                    "memberC": [
+                        true,
+                        -1,
+                        "Yes"
+                    ]
+                }
+            ]
+        }
+    },
+    "required": [
+        "scriptPath",
+        "scriptClass"
+    ]
+}

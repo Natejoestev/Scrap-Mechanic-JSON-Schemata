@@ -1,0 +1,177 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://github.com/Sheggies/sm-json-schemata/characterset",
+    "title": "Character Set",
+    "description": "An array with character configurations",
+    "type": "object",
+    "properties": {
+        "characters": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "uuid": {
+                        "type": "string",
+                        "title": "Character UUID",
+                        "description": "The character's UUID",
+                        "default": "00000000-0000-0000-0000-000000000000"
+                    },
+                    "renderables": {
+                        "type": "array",
+                        "title": "Renderables",
+                        "description": "The renderable parts of the character",
+                        "items": {
+                            "type": "string",
+                            "examples": [
+                                "$CONTENT_DATA/Path/To/Renderable.rend"
+                            ]
+                        },
+                        "minItems": 1
+                    },
+                    "ragdoll": {
+                        "type": "string",
+                        "title": "Ragdoll",
+                        "description": "The character's ragdoll file",
+                        "examples": [
+                            "$CONTENT_DATA/Path/To/Ragdoll"
+                        ]
+                    },
+                    "tumble": {
+                        "$ref": "/sm-json-schemata/collider"
+                    },
+                    "hit": {
+                        "type": "object",
+                        "title": "Hit",
+                        "description": "Character hit data",
+                        "properties": {
+                            "stand": {
+                                "$ref": "/sm-json-schemata/collider"
+                            },
+                            "crouch": {
+                                "$ref": "/sm-json-schemata/collider"
+                            }
+                        },
+                        "required": [
+                            "stand",
+                            "crouch"
+                        ]
+                    },
+                    "character": {
+                        "$ref": "/sm-json-schemata/scriptinfo"
+                    },
+                    "unit": {
+                        "$ref": "/sm-json-schemata/scriptinfo"
+                    },
+                    "movement": {
+                        "type": "object",
+                        "title": "Movement modifiers",
+                        "description": "Values for different movement actions, like walking, camera rotation, etc.",
+                        "properties": {
+                            "moveSpeed": {
+                                "type": "number"
+                            },
+                            "slowDownSpeed": {
+                                "type": "number"
+                            },
+                            "crouchSpeed": {
+                                "type": "number"
+                            },
+                            "sprintSpeed": {
+                                "type": "number"
+                            },
+                            "jumpImpulse": {
+                                "type": "number"
+                            },
+                            "headingRotationSpeed": {
+                                "type": "number"
+                            },
+                            "facingRotationSpeed": {
+                                "type": "number"
+                            },
+                            "canSwim": {
+                                "type": "boolean"
+                            },
+                            "static": {
+                                "type": "boolean"
+                            }
+                        },
+                        "required": [
+                            "mvoeSpeed",
+                            "slowDownSpeed",
+                            "crouchSpeed",
+                            "sprintSpeed",
+                            "headingRotationSpeed",
+                            "facingRotationSpeed",
+                            "canSwim"
+                        ]
+                    },
+                    "capsule": {
+                        "type": "object",
+                        "title": "Capsule",
+                        "description": "Capsule dimensions",
+                        "examples": [
+                            {
+                                "radius": 1,
+                                "height": 1,
+                                "crouchHeight": 0
+                            }
+                        ],
+                        "properties": {
+                            "radius": {
+                                "type": "number"
+                            },
+                            "height": {
+                                "type": "number"
+                            },
+                            "crouchHeight": {
+                                "type": "number"
+                            }
+                        },
+                        "required": [
+                            "radius",
+                            "height"
+                        ]
+                    },
+                    "mass": {
+                        "type": "number",
+                        "title": "Mass",
+                        "description": "The character's mass in kg"
+                    },
+                    "paint": {
+                        "type": "object",
+                        "title": "Paint",
+                        "description": "The character's paint colour and effect",
+                        "examples": [
+                            {
+                                "enable": true,
+                                "defaultColor": "RRGGBBAA",
+                                "effect": ""
+                            }
+                        ],
+                        "properties": {
+                            "enable": {
+                                "type": "boolean"
+                            },
+                            "defaultColor": {
+                                "type": "string"
+                            },
+                            "effect": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "enable",
+                            "effect"
+                        ]
+                    }
+                },
+                "required": [
+                    "uuid",
+                    "renderables",
+                    "character",
+                    "movement"
+                ]
+            }
+        }
+    }
+}
