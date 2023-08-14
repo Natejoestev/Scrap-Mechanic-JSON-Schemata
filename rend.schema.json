@@ -1,0 +1,42 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://github.com/JuneCarya/Scrap-Mechanic-JSON-Schemata/main/rend.schema.json",
+    "type": "object",
+    "title": "Renderable File",
+    "properties": {
+        "lodList": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "mesh": {
+                        "type": "string",
+                        "description": "path to default mesh",
+                        "pattern": "\\$((?:GAME_DATA|CONTENT_DATA|SURVIVAL_DATA|CHALLENGE_DATA))([\\/\\\\]([a-zA-Z ]+))+\\.[a-zA-Z]"
+                    },
+                    "subMeshMap": {
+                        "type": "object",
+                        "description": "a map of submesh names to textures",
+                        "patternProperties": {
+                            "*": { "$ref": "rendSubmesh.schema.json" }
+                        },
+                        "minProperties": 1
+                    },
+                    "subMeshList": {
+                        "type": "array",
+                        "items": { "$ref": "rendSubmesh.schema.json" },
+                        "minItems": 1
+                    }
+                },
+                "required": [
+                    "mesh"
+                ]
+            },
+            "uniqueItems": true
+        }
+    },
+    "required": [
+        "lodList"
+    ],
+    "additionalProperties": false
+}
