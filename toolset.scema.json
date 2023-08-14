@@ -11,15 +11,10 @@
                 "type": "object",
                 "properties": {
                     "name": {
-                        "type": "string"
-                    },
-                    "uuid": {
                         "type": "string",
-                        "format": "uuid",
-                        "title": "Tool UUID",
-                        "description": "The UUID assigned to the Tool",
-                        "default": "00000000-0000-0000-0000-000000000000"
+                        "pattern": "[a-zA-Z_].+"
                     },
+                    "uuid": { "$ref": "uuid.schema.json" },
                     "previewRenderable": {
                         "type": "string",
                         "pattern": "\\$((?:GAME_DATA|CONTENT_DATA|SURVIVAL_DATA|CHALLENGE_DATA))([\\/\\\\]([a-zA-Z ]+))+\\.rend"

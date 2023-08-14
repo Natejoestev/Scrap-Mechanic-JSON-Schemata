@@ -1,0 +1,32 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://github.com/JuneCarya/Scrap-Mechanic-JSON-Schemata/main/sobset.schema.json",
+    "title": "ScriptableObject Set",
+    "description": "An array with character configurations",
+    "type": "object",
+    "properties": {
+        "scriptableObjectList": {
+            "type": "array",
+            "items": {
+                "filename": {
+                    "type": "string",
+                    "title": "Script file",
+                    "description": "The file containing the script class",
+                    "default": "$CONTENT_DATA/Scripts/MyScriptableObject.lua"
+                },
+                "classname": {
+                    "type": "string",
+                    "title": "Script class",
+                    "description": "The script class of the object",
+                    "default": "MyScriptableObject"
+                },
+                "name": {
+                    "type": "string",
+                    "pattern": "[a-zA-Z_].+"
+                },
+                "uuid": { "$ref": "uuid.schema.json" }
+            }
+        }
+    },
+    "additionalProperties": false
+}
