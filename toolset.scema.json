@@ -1,5 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://github.com/JuneCarya/Scrap-Mechanic-JSON-Schemata/main/toolset.schema.json",
     "title": "Tool Set",
     "description": "An array with tool configurations",
     "type": "object",
@@ -33,7 +34,7 @@
                         "minItems": 9,
                         "maxItems": 9
                     },
-                    "script": { "$ref": "./scriptinfo.schema.json" },
+                    "script": { "$ref": "scriptinfo.schema.json" },
                     "showInInventory": {
                         "type": "boolean",
                         "default": false,

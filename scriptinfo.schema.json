@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
-    "$id": "https://github.com/Sheggies/sm-json-schemata/scriptinfo",
+    "$id": "https://github.com/JuneCarya/Scrap-Mechanic-JSON-Schemata/main/scriptinfo.schema.json",
     "type": "object",
     "title": "Script information",
     "description": "Script file, script class, and script data pertaining to the object",

@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
-    "$id": "https://github.com/Sheggies/sm-json-schemata/offset",
+    "$id": "https://github.com/JuneCarya/Scrap-Mechanic-JSON-Schemata/main/offset.schema.json",
     "type": "array",
     "title": "Offset",
     "description": "The objects offset",
