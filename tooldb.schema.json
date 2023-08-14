@@ -1,0 +1,24 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "title": "Tool Database",
+    "description": "An array with paths to toolsets",
+    "examples": [
+        {
+            "toolSetList": [
+                "$CONTENT_DATA/Tools/Database/ToolSets/example.toolset"
+            ]
+        }
+    ],
+    "type": "object",
+    "properties": {
+        "toolSetList": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "default": "$CONTENT_DATA/Tools/Database/ToolSets/%1.toolset"
+            },
+            "uniqueItems": true
+        }
+    },
+    "maxProperties": 1
+}

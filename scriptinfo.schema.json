@@ -5,7 +5,7 @@
     "title": "Script information",
     "description": "Script file, script class, and script data pertaining to the object",
     "properties": {
-        "scriptPath": {
+        "file": {
             "type": "string",
             "title": "Script file",
             "description": "The file containing the script class",
@@ -15,7 +15,7 @@
                 "$SURVIVAL_DATA/Scripts/Script.lua"
             ]
         },
-        "scriptClass": {
+        "class": {
             "type": "string",
             "title": "Script class",
             "description": "The script class of the object",
