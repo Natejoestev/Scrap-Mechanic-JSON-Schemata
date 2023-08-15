@@ -1,0 +1,32 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://github.com/JuneCarya/Scrap-Mechanic-JSON-Schemata/main/rendSubmesh.schema.json",
+    "type": "object",
+    "properties": {
+        "textureList": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "description": "path to texture",
+                "pattern": "\\$((?:GAME_DATA|CONTENT_DATA|SURVIVAL_DATA|CHALLENGE_DATA))([\\/\\\\]([a-zA-Z ]+))+\\.[a-zA-Z]"
+            },
+            "minItems": 3
+        },
+        "material": {
+            "type": "string",
+            "anyOf": [
+                {"type":"string", "const":"Dif", "description": "Only diffuse is used for this material." },
+                {"type":"string", "const":"DifAsg", "description": "Diffuse and ASG are used for this material." },
+                {"type":"string", "const":"DifAsgNor", "description": "Diffuse, ASG and normal maps are used for this material." },
+                {"type":"string", "const":"DifAsgNorAlpha", "description": "Same as \"DifAsgNor\", though red value in ASG texture is used to create transparency." },
+                {"type":"string", "const":"Glass", "description": "Diffuse, ASG and normal maps are used for this material. Makes block transparent." },
+                {"type":"string", "const":"DifAsgNorFlip", "description": "Renders both sides of all faces of the mesh. Can be useful if you're making a window." },
+                {"type":"string", "const":"UVAnimDifAsgNor", "description": "Renders a UV positions sequence, requires \"custom\" next to it" }
+            ]
+        }
+    },
+    "required": [
+        "texturesList",
+        "material"
+    ]
+}

@@ -1,0 +1,47 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://github.com/JuneCarya/Scrap-Mechanic-JSON-Schemata/main/toolset.schema.json",
+    "title": "Tool Set",
+    "description": "An array with tool configurations",
+    "type": "object",
+    "properties": {
+        "characters": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "pattern": "[a-zA-Z_].+"
+                    },
+                    "uuid": { "$ref": "uuid.schema.json" },
+                    "previewRenderable": {
+                        "type": "string",
+                        "pattern": "\\$((?:GAME_DATA|CONTENT_DATA|SURVIVAL_DATA|CHALLENGE_DATA))([\\/\\\\]([a-zA-Z ]+))+\\.rend"
+                    },
+                    "previewRotation": {
+                        "type": "array",
+                        "items": {
+                            "type":"integer",
+                            "minimum": -1,
+                            "maximum": 1
+                        },
+                        "minItems": 9,
+                        "maxItems": 9
+                    },
+                    "script": { "$ref": "scriptinfo.schema.json" },
+                    "showInInventory": {
+                        "type": "boolean",
+                        "default": false,
+                        "description": "whether or not the tool will show in unlimited inventory"
+                    }
+                },
+                "required": [
+                    "name",
+                    "uuid",
+                    "previewRenderable"
+                ]
+            }
+        }
+    }
+}

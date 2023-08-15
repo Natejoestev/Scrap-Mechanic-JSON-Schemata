@@ -1,0 +1,24 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://github.com/JuneCarya/Scrap-Mechanic-JSON-Schemata/main/inventoryDescriptions.schema.json",
+    "type": "object",
+    "title": "Inventory Descriptions",
+    "description": "A set of titles and descriptions assigned to the UUID of an item in the inventory",
+    "patternProperties": {
+        "[a-f0-9]{8}-?[a-f0-9]{4}-?4[a-f0-9]{3}-?[89ab][a-f0-9]{3}-?[a-f0-9]{12}": {
+            "type": "object",
+            "description": "the inventory details of an item",
+            "additionalProperties": false,
+            "properties": {
+                "title": {
+                    "type": "string",
+                    "description": "the title of an item"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "the description of an item"
+                }
+            }
+        }
+    }
+}

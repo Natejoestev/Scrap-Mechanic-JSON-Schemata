@@ -1,11 +1,11 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
-    "$id": "https://github.com/Sheggies/sm-json-schemata/scriptinfo",
+    "$id": "https://github.com/JuneCarya/Scrap-Mechanic-JSON-Schemata/main/scriptinfo.schema.json",
     "type": "object",
     "title": "Script information",
     "description": "Script file, script class, and script data pertaining to the object",
     "properties": {
-        "scriptPath": {
+        "filename": {
             "type": "string",
             "title": "Script file",
             "description": "The file containing the script class",
@@ -15,7 +15,7 @@
                 "$SURVIVAL_DATA/Scripts/Script.lua"
             ]
         },
-        "scriptClass": {
+        "classname": {
             "type": "string",
             "title": "Script class",
             "description": "The script class of the object",
